@@ -9,7 +9,7 @@
     "build": "npm run clean && tsc",
     "clean": "rm -rf ./dist",
     "serve": "node dist/index.js",
-    "test": "node --loader ts-node/esm tests/*.ts"
+    "test": "node --import ./loader.js tests/*.ts"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,9 @@
   "homepage": "https://github.com/ilkkakuivanen/prototype-starter-kit-2024#readme",
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.10",
+    "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^20.13.0",
     "@types/supertest": "^6.0.2",
     "dotenv": "^16.4.5",
@@ -35,6 +37,7 @@
   },
   "dependencies": {
     "better-sqlite3": "^11.0.0",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2"
   }
 }

@@ -18,7 +18,7 @@ function createUser(req: Request, res: Response) {
     const user = createUserInDB(name, email);
     res.json(user);
   } else {
-    res.status(400).send("User email already in use!");
+    res.status(409).send("Conflict: user email already in use!");
   }
 }
 

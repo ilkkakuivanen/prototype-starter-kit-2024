@@ -7,8 +7,7 @@ import fs from "fs";
 const PORT = config.isProduction ? config.httpsPort : config.httpPort;
 
 // Hello!
-const message: string = "Hi! Welcome to Prototype Starter Kit 2024 edition!";
-console.log(message);
+console.log("Hi! Welcome to Prototype Starter Kit 2024 edition!");
 
 let serverInstance: http.Server | https.Server;
 

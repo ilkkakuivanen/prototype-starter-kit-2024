@@ -38,5 +38,5 @@ coverage/
 *.njsproj
 *.sln
 
-# Nodemon
-nodemon.json
+# Db
+database.db

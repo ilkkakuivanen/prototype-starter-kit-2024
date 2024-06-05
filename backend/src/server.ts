@@ -13,7 +13,7 @@ server.use(bodyParser.json());
 server.use(loggerMiddleware); // Use the logging middleware
 
 server.use("/api/login", loginRoutes);
-server.use("/api/users", userRoutes);
+server.use("/api/users", authMiddleware,  userRoutes);
 
 server.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   console.error(err.stack);

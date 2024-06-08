@@ -1,7 +1,29 @@
-import { test } from "node:test";
+import { test, describe, beforeEach, it } from "node:test";
 import assert from "node:assert/strict";
 import request from "supertest";
 import server from "../src/server.js";
+
+describe("My Test Suite", () => {
+  let value;
+
+  beforeEach(() => {
+    // Code to run before each test
+    value = 0;
+  });
+
+  it("should start with a value of 0", () => {
+    assert.strictEqual(value, 0);
+  });
+
+  it("should increment value by 1", () => {
+    value += 1;
+    assert.strictEqual(value, 1);
+  });
+
+  it("should reset value before each test", () => {
+    assert.strictEqual(value, 0);
+  });
+});
 
 test("GET /users should return 200 OK and users", async (t) => {
   const response = await request(server).get("/api/users");

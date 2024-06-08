@@ -13,7 +13,7 @@ An easy-to-use starting point for web-based prototyping projects. It is flexible
 ## Main features
 
 - [x] NodeJS (Typescript) backend
-- [x] Routes with auth middleware
+- [x] Routes with simple placeholder auth middleware
 - [x] SQLite (better-sqlite3)
 - [ ] Socket.io
 - [ ] Angular frontend

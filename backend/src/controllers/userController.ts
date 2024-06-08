@@ -3,8 +3,9 @@ import {
   getAllUsersFromDB,
   createUserInDB,
   checkIsEmailReserved,
-  deleteAllUsersInDB
+  deleteAllUsersInDB,
 } from "../models/userModel.js";
+import { ERR_409, SUCCESS_200 } from "../config/responses.js";
 
 function getAllUsers(req: Request, res: Response) {
   const users = getAllUsersFromDB();
@@ -18,13 +19,13 @@ function createUser(req: Request, res: Response) {
     const user = createUserInDB(name, email);
     res.json(user);
   } else {
-    res.status(409).send("Conflict: user email already in use!");
+    res.status(409).send(ERR_409.EMAIL_IN_USE);
   }
 }
 
 function deleteAllUsers(req: Request, res: Response) {
   deleteAllUsersInDB();
-  res.status(200).send("Users deleted!");
+  res.status(200).send(SUCCESS_200.USER_DELETED);
 }
 
 export { getAllUsers, createUser, deleteAllUsers };

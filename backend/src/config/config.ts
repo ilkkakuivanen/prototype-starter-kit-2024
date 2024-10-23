@@ -9,7 +9,7 @@ if (process.env.SECRET === undefined) {
 const config = {
   httpPort: 3000,
   httpsPort: 3443,
-  isAuthOn: true,
+  isAuthOn: true  ,
   isProduction: process.env.NODE_ENV === "production",
   dbUri: process.env.DB_URI,
   secretKey: process.env.SECRET ?? "",
